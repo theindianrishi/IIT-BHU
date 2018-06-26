@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="image.css">
+	<link rel="stylesheet" type="text/css" href="filter.css">
+	<script type="text/javascript" src="image.js"></script>
+</head>
+<body>
+	<header class="nav">
+		<div class="navbar">
+  			<div class="dropdown">
+    			<div class="dropbtn" onclick="dropdown(this)">
+  					<div class="bar1"></div>
+  					<div class="bar2"></div>
+  					<div class="bar3"></div>
+				</div>
+    			<div class="dropdown-content" id="myDropdown">
+      				<a href="http://www.facebook.com/theindianrishi">Ping Me On FaceBook</a>
+      				<a href="http://theindianrishiblog.wordpress.com">Follow My Blog</a>
+      				<a href="http://twitter.com/theindianrishi">Tweet Out On Twitter</a>
+      				<a href="http://instagram.com/theindianrishi/">Stalk Me On Instagram</a>
+    			</div>
+  			</div> 
+		</div>
+		<center class="header">
+			Rishi's Image Gallery
+		</center>
+	</header>
+	<div class="mid">
+		<center>
+			<font size="50px" color="white" face="Gilbert">
+				This Is An Image Gallery
+			</font>
+		</center>
+	</div>
+	<div class="main">
+		<center>
+			<div id="myBtnContainer">
+  				<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  				<button class="btn" onclick="filterSelection('nature')"> Nature</button>
+  				<button class="btn" onclick="filterSelection('animal')"> Animals</button>
+  				<button class="btn" onclick="filterSelection('bird')"> Birds</button>
+  			</div>
+		</center>
+		<div class="row">
+ 			<div class="column nature">
+    			<div class="content">
+      				<img id="1" src="1.jpg" alt="Moon">
+      					<h4>Moon & Tree</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','1')">Grayscale</button>
+      					<button onclick="filter('','1')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column bird">
+    			<div class="content">
+      				<img id="2" src="2.jpg" alt="Doves">
+      					<h4>Doves</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','2')">Grayscale</button>
+      					<button onclick="filter('','2')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column nature">
+    			<div class="content">
+      				<img id="3" src="3.jpeg" alt="Dock">
+      					<h4>Lake</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','3')">Grayscale</button>
+      					<button onclick="filter('','3')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column animal">
+    			<div class="content">
+      				<img id="4" src="4.jpg" alt="Monkey">
+      					<h4>Monkey & Cubs</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','4')">Grayscale</button>
+      					<button onclick="filter('','4')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column animal">
+    			<div class="content">
+      				<img id="5" src="5.jpg" alt="Cat">
+      					<h4>Cat & Parrot</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','5')">Grayscale</button>
+      					<button onclick="filter('','5')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column animal">
+    			<div class="content">
+      				<img id="6" src="6.jpg" alt="Horse">
+      					<h4>Stallion</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','6')">Grayscale</button>
+      					<button onclick="filter('','6')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column bird">
+    			<div class="content">
+      				<img id="7" src="7.jpg" alt="Kingfisher">
+      					<h4>Kingfisher</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','7')">Grayscale</button>
+      					<button onclick="filter('','7')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column nature">
+    			<div class="content">
+      				<img id="8" src="8.jpg" alt="Waterfall">
+      					<h4>Nature</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','8')">Grayscale</button>
+      					<button onclick="filter('','8')">Normal</button>
+   	 			</div>
+  			</div>
+  			<div class="column bird">
+    			<div class="content">
+      				<img id="9" src="9.jpg" alt="Duck">
+      					<h4>Flying Duck</h4>
+      					<p>Lorem ipsum dolor..</p>
+      					<button onclick="filter('grayscale(100%)','9')">Grayscale</button>
+      					<button onclick="filter('','9')">Normal</button>
+   	 			</div>
+  			</div>
+  		</div>
+	</div>
+	<!-- script for dropdown menu-->
+	<script type="text/javascript">
+		function dropdown(x) {
+    		document.getElementById("myDropdown").classList.toggle("show");
+    		x.classList.toggle("change");
+		}
+
+		window.onclick = function(e) {
+  			if (!e.target.matches('.dropbtn')) {
+    			var myDropdown = document.getElementById("myDropdown");
+      			if (myDropdown.classList.contains('show')) {
+        			myDropdown.classList.remove('show');
+      			}
+ 		 	}
+		}
+	</script>
+
+	<!--script for filtering pics-->
+	<script>
+		filterSelection("all")
+		function filterSelection(c) {
+  			var x, i;
+  			x = document.getElementsByClassName("column");
+  			if (c == "all") c = "";
+  			for (i = 0; i < x.length; i++) {
+    			w3RemoveClass(x[i], "show");
+    			if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  			}
+		}
+
+		function w3AddClass(element, name) {
+  			var i, arr1, arr2;
+  			arr1 = element.className.split(" ");
+  			arr2 = name.split(" ");
+  			for (i = 0; i < arr2.length; i++) {
+    			if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  			}
+		}
+
+		function w3RemoveClass(element, name) {
+  			var i, arr1, arr2;
+  			arr1 = element.className.split(" ");
+  			arr2 = name.split(" ");
+  			for (i = 0; i < arr2.length; i++) {
+    			while (arr1.indexOf(arr2[i]) > -1) {
+      				arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    			}
+  			}
+  			element.className = arr1.join(" ");
+		}
+
+
+		var btnContainer = document.getElementById("myBtnContainer");
+		var btns = btnContainer.getElementsByClassName("btn");
+		for (var i = 0; i < btns.length; i++) {
+  			btns[i].addEventListener("click", function(){
+    		var current = document.getElementsByClassName("active");
+    		current[0].className = current[0].className.replace(" active", "");
+    		this.className += " active";
+  			});
+		}
+	</script>
+
+
+	<!-- script for filter style of pics-->
+	<script type="text/javascript">
+		function filter(x,y) {
+			document.getElementById(y).style.filter = x;
+		}
+	</script>
+</body>
+</html>
